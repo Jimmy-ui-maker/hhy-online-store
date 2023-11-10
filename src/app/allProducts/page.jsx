@@ -1,7 +1,6 @@
 import AllProduct from "@/components/AllProducts";
-import SearchBox from "@/components/SearchBox";
 import React from "react";
 
-export default function AllProducts() {
-  return <>{/*<AllProduct />*/}</>;
+export default function page() {
+  return <AllProduct />;
 }

@@ -1,17 +1,9 @@
 import Link from "next/link";
 import SearchBox from "./SearchBox";
+import getAllData from "@/newControllers/AllProducts";
 
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/allProducts", {
-    cache: "no-store",
-  });
-  if (!res.ok) return "products not found";
-
-  const allPro = await res.json();
-  return allPro.data;
-}
 export default async function AllProduct() {
-  const prods = await getData();
+  const prods = await getAllData();
 
   return (
     <section id="product">
