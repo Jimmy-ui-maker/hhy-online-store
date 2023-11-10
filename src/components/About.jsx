@@ -9,13 +9,13 @@ export default function About() {
           <div className="row">
             <h2
               className=" text-lg-start text-center"
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-delay="200"
             >
               HHY Online Store
             </h2>
           </div>
-          <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div className="col-lg-6" data-aos="fade-right" data-aos-delay="200">
             <img src="/imgs/slide-4.jpg" className="img-fluid  rounded-2" />
           </div>
 

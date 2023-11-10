@@ -5,7 +5,7 @@ export default function page() {
       id="about"
       className=" shadow-sm py-5 about w-100 vh-50 d-flex flex-column justify-content-center align-items-center"
     >
-      <div className="container" data-aos="fade-up">
+      <div className="container" data-aos="fade-right">
         <div className="row content justify-content-center align-items-center">
           <div className="row">
             <h2
@@ -16,7 +16,7 @@ export default function page() {
               HHY Online Store
             </h2>
           </div>
-          <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div className="col-lg-6" data-aos="fade-right" data-aos-delay="200">
             <img src="/imgs/slide-4.jpg" className="img-fluid  rounded-2" />
           </div>
           <div
