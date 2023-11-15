@@ -1,6 +1,5 @@
 import getData from "@/newControllers/AllNewProducts";
 import Link from "next/link";
-import SearchBox from "./SearchBox";
 
 export default async function NewProduct() {
   const prods = await getData();
@@ -12,7 +11,22 @@ export default async function NewProduct() {
           <p>Newly Products</p>
         </div>
         <div className="row g-4 mb-5">
-          <SearchBox />
+        <div className="container ">
+            <div className="row d-flex justify-content-center">
+              <div className="c-search col-lg-3 col-8 mt-2  p-1 rounded-3">
+                <Link className=" text-decoration-none" href={"/search"}>
+                  <div className="input-group ">
+                    <input
+                      type="search"
+                      className="form-control shadow-none"
+                      placeholder="Search by product title..."
+                    />
+                    <span className="input-group-text bi bi-search"></span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
           {prods.map((pro) => (
             <div
               key={pro._id}

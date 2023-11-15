@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export async function GET(req, { params: { id } }) {
   try {
     const allNewPrd = await Product.findOne({ _id: id });
-    return NextResponse.json({ data: allNewPrd });
+    return NextResponse.json(allNewPrd);
   } catch (error) {
     return NextResponse.json({ msg: "Error occured!!!!" });
   }

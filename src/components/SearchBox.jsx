@@ -1,4 +1,31 @@
-export default function SearchBox() {
+"use client"
+import { useState } from "react";
+
+export default function SearchBox({setResults}) {
+  const [input, setInput] = useState("");
+
+  const fetchData = (value) => {
+    fetch("http://localhost:3000/api/allProducts", {
+      cache: "no-store",
+    }).then((response) =>
+      response.json().then((json) => {
+        const results = json.filter((user) => {
+          return (
+            value &&
+            user &&
+            user.title &&
+            user.title.toLowerCase().includes(value) 
+          );
+        });
+        setResults(results);
+      })
+    );
+  };
+  
+  const handleChange = (value) => {
+    setInput(value);
+    fetchData(value);
+  };
   return (
     <>
       <div className="container ">
@@ -9,7 +36,8 @@ export default function SearchBox() {
                 type="search"
                 className="form-control shadow-none"
                 placeholder="Search your product here..."
-                readOnly
+                value={input}
+                onChange={(e) => handleChange(e.target.value)}
               />
               <span className="input-group-text bi bi-search"></span>
             </div>

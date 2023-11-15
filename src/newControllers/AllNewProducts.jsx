@@ -4,6 +4,5 @@ export default async function getData() {
     });
     if (!res.ok) return "products not found";
   
-    const newPro = await res.json();
-    return newPro.data;
+    return res.json();
   }

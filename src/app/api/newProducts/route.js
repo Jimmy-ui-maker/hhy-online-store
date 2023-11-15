@@ -9,7 +9,7 @@ export async function GET(req) {
       sort: { _id: 1 },
       limit: 12,
     });
-    return NextResponse.json({ data: prod });
+    return NextResponse.json(prod);
   } catch (error) {
     return NextResponse.json({ msg: "Error occured" });
   }

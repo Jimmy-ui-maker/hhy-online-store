@@ -1,32 +1,16 @@
 import Link from "next/link";
-import SearchBox from "./SearchBox";
-import getAllData from "@/newControllers/AllProducts";
+import React from "react";
 
-export default async function AllProduct() {
-  const prods = await getAllData();
-
+export default function SearchResult({ results }) {
   return (
     <section id="product">
-      <div className="container p-4 " data-aos="fade-up" data-aos-delay="200">
-        <div class="section-title">
-          <h2>You Might Like</h2>
-          <p>All Products</p>
+      <div className="container p-4" data-aos="fade-up" data-aos-delay="200">
+        <div className="section-title text-center">
+          <h2>Be patient please as you</h2>
+          <p>search for products.</p>
         </div>
-
         <div className="row g-4 mb-5">
-          <div className="c-search col-lg-3 col-8 mt-2  p-1 rounded-3">
-            <Link className=" text-decoration-none" href={"/search"}>
-              <div className="input-group ">
-                <input
-                  type="search"
-                  className="form-control shadow-none"
-                  placeholder="Search by product title..."
-                />
-                <span className="input-group-text bi bi-search"></span>
-              </div>
-            </Link>
-          </div>
-          {prods?.map((pro) => (
+          {results.map((pro) => (
             <div key={pro._id} className="col-6 col-md-4 col-lg-3 mb-4 ">
               <div
                 className="card p-3"
@@ -37,7 +21,6 @@ export default async function AllProduct() {
                   <img src={pro.images_url} className="card-img-top " />
                 </Link>
               </div>
-
               <h4
                 className="mt-2 mb-0 text-truncate"
                 data-aos="fade-up"
@@ -54,7 +37,7 @@ export default async function AllProduct() {
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <i class="bi bi-cart mx-1"></i>
+                <i className="bi bi-cart mx-1"></i>
                 Add to Cart
               </Link>
             </div>

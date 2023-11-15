@@ -11,8 +11,7 @@ const productsSchema = new Schema({
     noInstocking: Number,
     images_url: String,
     images_asset_id: String,
-    },
-    {
+    },{
       timestamps: true,
     });
    

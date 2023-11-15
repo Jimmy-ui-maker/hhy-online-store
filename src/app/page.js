@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <LandingPage />
       <About />
-      <NewProduct />
+      {/**<NewProduct />*/}
     </>
   );
 }

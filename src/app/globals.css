@@ -276,6 +276,9 @@ body {
   outline: none;
   box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
 }
+.c-search input{
+  color: #013289;
+}
 
 .section-title {
   padding-bottom: 20px;
